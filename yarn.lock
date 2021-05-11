@@ -1131,6 +1131,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@expo-google-fonts/nunito@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/nunito/-/nunito-0.1.0.tgz#663caf8d99ee20dfd570c8ebefbacae4f1789d60"
+  integrity sha512-9IQtlKj029h1XtSyhQck5yBi2nLJXHF3Uqmt2w7nxABTv99QYzCsIAaULmttxcZlJsyUMNMz3Fyor6UgfIV5cA==
+
 "@expo/config-plugins@1.0.29", "@expo/config-plugins@^1.0.18":
   version "1.0.29"
   resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-1.0.29.tgz#fc36a7a90a08e1a67ed2c19241f4309b08e88a25"
