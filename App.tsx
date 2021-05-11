@@ -1,7 +1,9 @@
 import React, { useReducer } from 'react';
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import MapView  from 'react-native-maps'
+import { StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-native';
 import { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
+import { Feather } from '@expo/vector-icons'
+
+import MapView  from 'react-native-maps'
 import mapMarker from './assets/marker.png'
 
 export default function App() {
@@ -34,7 +36,15 @@ export default function App() {
           </Callout>
         </Marker>
       </MapView>
+      
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>2 amigos encontrados</Text>
 
+        <TouchableOpacity style={styles.createFriendButton} onPress={() => {}}>
+          <Feather name="plus" size={20} color="#FFF"/>
+        </TouchableOpacity>
+
+      </View>
      
     </View>
   );
@@ -63,5 +73,36 @@ const styles = StyleSheet.create({
     color: '#0089a5',
     fontSize: 14,
   },
+
+  footer: {
+    position: 'absolute',
+    left: 24,
+    right: 24,
+    bottom: 32,
+
+    backgroundColor: '#FFF',
+    borderRadius: 20,
+    height: 46,
+    paddingLeft: 24,
+
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  
+  footerText: {
+    color: '#8fa7c3',
+  },
+
+  createFriendButton: {
+    width: 56,
+    height: 56,
+    backgroundColor: '#15c5d6',
+    borderRadius: 20,
+
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
 
 });
