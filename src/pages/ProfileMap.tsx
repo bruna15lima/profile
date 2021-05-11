@@ -1,11 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native'
 
 import mapMarker from '../../assets/marker.png'
+import { RectButton } from 'react-native-gesture-handler';
 
-export default function ProfileMap() {  
+
+export default function ProfileMap() {
+  const navigation = useNavigation();
+
+  function handleNavigateToProfileDetails() {
+    navigation.navigate('ProfileDetails');
+  }
+  
+  function handleNavigateToCreateProfile() {
+    navigation.navigate('SelectMapPosition');
+  }
+  
   return(
     <View style={styles.container}>      
     <MapView 
@@ -28,7 +41,7 @@ export default function ProfileMap() {
           longitude:-35.7079124,
         }}
       >
-        <Callout tooltip onPress={() =>{alert('oi') }} >
+        <Callout tooltip onPress={handleNavigateToProfileDetails} >
           <View style={styles.calloutContainer}>
           <Text style={styles.calloutText}>nome do usuario</Text>
           </View>
@@ -39,9 +52,9 @@ export default function ProfileMap() {
     <View style={styles.footer}>
       <Text style={styles.footerText}>2 amigos encontrados</Text>
 
-      <TouchableOpacity style={styles.createFriendButton} onPress={() => {}}>
+      <RectButton style={styles.createFriendButton} onPress={handleNavigateToCreateProfile}>
         <Feather name="plus" size={20} color="#FFF"/>
-      </TouchableOpacity>
+      </RectButton>
 
     </View>
    
