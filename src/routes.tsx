@@ -26,18 +26,24 @@ export default function Routes() {
         component={ProfileDetails}
         options={{
           headerShown: true,
-          header: () => <Header title="Perfil"/>
+          header: () => <Header showCancel={false} title="Perfil"/>
         }}
         />
         <Screen 
         name="SelectMapPosition" 
         component={SelectMapPosition}
-        //options={{}}
+        options={{
+          headerShown: true,
+          header: () => <Header title="Selecione no mapa"/>
+        }}
         />
         <Screen 
         name="ProfileData" 
         component={ProfileData}
-        //options={{}}
+        options={{
+          headerShown: true,
+          header: () => <Header title="Informe os dados"/>
+        }}
         />
       </Navigator>
     </NavigationContainer>
